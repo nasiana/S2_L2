@@ -58,3 +58,64 @@ Exercise 2
 - Create a student object via an instantiation on the Student class and then test the displayStudent method
 '''
 
+class Person:
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def display(self):
+        print("Name: {}, age: {}".format(self.name, self.age))
+
+p1 = Person("Nasian", 23)
+p1.display()
+
+class Student(Person):
+
+    def __init__(self, name, age, section):
+        super().__init__()
+        self.section = section
+
+    def displayStudent(self):
+        super().displayStudent()
+        print("Name: {}, Age: {} and Section: {}.".format(self.name, self.age, self.section))
+
+s1 = Student("Nasian", 23, 'Physics')
+s1.displayStudent()
+
+# Solution from Andreea
+
+class Person:
+    # define constructor with name and age as parameters
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    # create display method fro Person class
+    def display(self):
+        print("Person name : ", self.name)
+        print("Person age = ", self.age)
+
+
+# create child class Student of Person class
+class Student(Person):
+    # define constructor of Student class with section additional parameters
+    def __init__(self, name, age, section):
+        # super().__init__(name, age)
+        # OR
+        Person.__init__(self, name, age)
+        self.section = section
+
+    # Create display method for Student class
+    def displayStudent(self):
+        print("Student name : ", self.name)
+        print("Student age = ", self.age)
+        print("Student section = ", self.section)
+
+
+# Testing Person class
+P = Person("Tomas Wild", 37)
+P.display()
+print("-------------------------------")
+S = Student("Albert", 23, "Mathematics")
+S.displayStudent()
