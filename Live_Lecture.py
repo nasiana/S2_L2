@@ -73,11 +73,10 @@ p1.display()
 class Student(Person):
 
     def __init__(self, name, age, section):
-        super().__init__()
+        super().__init__(name, age)
         self.section = section
 
     def displayStudent(self):
-        super().displayStudent()
         print("Name: {}, Age: {} and Section: {}.".format(self.name, self.age, self.section))
 
 s1 = Student("Nasian", 23, 'Physics')
@@ -96,6 +95,7 @@ class Person:
         print("Person name : ", self.name)
         print("Person age = ", self.age)
 
+# FINISH OF THE TEST TOMORROW
 
 # create child class Student of Person class
 class Student(Person):
