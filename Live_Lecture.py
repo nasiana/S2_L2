@@ -73,6 +73,8 @@ p1.display()
 class Student(Person):
 
     def __init__(self, name, age, section):
+        # when using the super method remember to call it on the init method with the arguments that you wan to
+        # inherit from the parent class
         super().__init__(name, age)
         self.section = section
 
@@ -81,6 +83,7 @@ class Student(Person):
 
 s1 = Student("Nasian", 23, 'Physics')
 s1.displayStudent()
+
 
 # Solution from Andreea
 
